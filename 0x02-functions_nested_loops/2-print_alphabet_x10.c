@@ -3,7 +3,7 @@
  * print_alphabet - Print the alphabet followed by a new line.
  * Return: (0) success.
  */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	char ch;
 	int cn;
