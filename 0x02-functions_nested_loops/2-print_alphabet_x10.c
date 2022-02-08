@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  print_alphabet_x10 - Print the alphabet x10 followed by a new line.
+ * print_alphabet_x10 - Print the alphabet x10 followed by a new line.
  * Return: (0) success.
  */
 void print_alphabet_x10(void)
