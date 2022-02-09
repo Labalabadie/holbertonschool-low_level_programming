@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *More_numbers - Print all numbers from 0 to 14.
+ *more_numbers - Print all numbers from 0 to 14.
  * Return: numbers from 0 to 14.
  */
 
@@ -21,5 +21,4 @@ void more_numbers(void)
 		}
 		_putchar('\n');
 	}
-	
 }
