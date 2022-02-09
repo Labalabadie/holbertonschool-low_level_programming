@@ -30,6 +30,6 @@ int main(void)
 			printf("%d ", a);
 		}
 	}
-	printf('\n');
+	putchar('\n');
 	return (0);
 }
