@@ -3,21 +3,11 @@
 /**
  *main -  prints the number of arguments passed into it.
  *@argc: argument count
- *@argv: argument value.
+ *@argv: argument value unused.
  *Return: 0 success.
  */
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-	int count;
-
-	count = 0;
-	if (1 == 0)
-		printf("%s\n", argv[0]);
-
-	while (count < argc - 1)
-	{
-		count++;
-	}
-	printf("%d\n", count);
-	retur(0);
+	printf("%d\n", argc - 1);
+	return (0);
 }
