@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  *main - A program that adds positive numbers.
  *@argc: Argument count. used for a counter in for loop.
