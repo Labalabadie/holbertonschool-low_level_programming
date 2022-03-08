@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 /**
  *free_dog - Frees memory of a instance.
  *@d: Struct name
