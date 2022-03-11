@@ -1,0 +1,59 @@
+#include "variadic_functions.h"
+
+typedef struct chfon
+{
+	char x;
+	void (*f)(va_list);
+} chfun;
+
+void p_s(va_list str)
+{
+	printf("%s",va_arg(str, char *));
+}
+void p_c(va_list str)
+{
+	printf("%c", va_arg(str, int));
+}
+void p_f(va_list str)
+{
+	printf("%f", va_arg(str, double));
+}
+void p_i(va_list str)
+{
+	printf("%d", va_arg(str, int));
+}
+
+void print_all(const char * const format, ...)
+{
+	va_list str;
+	chfun pr[] = {
+		{'s', p_s}, {'c',p_c}, {'i',p_i}, {'f',p_f}, {'\0', NULL}
+	};
+	unsigned int i;
+	unsigned int j;
+	const char *a = ", ";
+	const char *b = "";
+
+	va_start(str, format);
+	i = 0;
+	while (format[i] != '\0')
+	{
+		j = 0;
+		while (pr[j].x != '\0')
+		{
+	       if (pr[j].x == format[i])
+		{
+			if (str == NULL)
+				printf("(nil)");
+			printf("%s", b);
+			pr[j].f(str);
+			break;
+		}
+	       j++;
+		}
+		b = a;
+		i++;
+	}
+	va_end(str);
+	putchar('\n');
+}
