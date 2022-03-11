@@ -16,6 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i == n - 1)
 			break;
 
+		if (separator != NULL)
 		printf("%s", separator);
 	}
 	va_end(lst);
