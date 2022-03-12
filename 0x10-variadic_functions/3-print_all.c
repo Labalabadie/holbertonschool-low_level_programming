@@ -52,8 +52,8 @@ void print_all(const char * const format, ...)
 	};
 	int i;
 	int j;
-	const char *a = ", ";
-	const char *b = "";
+	char *a = ", ";
+	char *b = "";
 
 	va_start(str, format);
 	i = 0;
