@@ -6,7 +6,8 @@
 void p_s(va_list str)
 {
 	char *aux = va_arg(str, char*);
-	if (*aux == '\0')
+
+	if (aux == NULL)
 	{
 		printf("(nil)");
 		return;
@@ -47,7 +48,7 @@ void print_all(const char * const format, ...)
 {
 	va_list str;
 	chfun pr[] = {
-		{'s', p_s}, {'c', p_c}, {'i', p_i}, {'f', p_f}, {'\0', NULL}
+		{'s', p_s}, {'c', p_c}, {'i', p_i}, {'f', p_f}, {NULL, NULL}
 	};
 	unsigned int i;
 	unsigned int j;
@@ -56,22 +57,21 @@ void print_all(const char * const format, ...)
 
 	va_start(str, format);
 	i = 0;
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while (pr[j].x != '\0')
+		while (pr[j].x != NULL)
 		{
 			if (pr[j].x == format[i])
 		{
 			printf("%s", b);
 			pr[j].f(str);
-			break;
+			b = a;
 		}
-	       j++;
+		j++;
 		}
-		b = a;
 		i++;
 	}
-	va_end(str);
 	putchar('\n');
+	va_end(str);
 }
