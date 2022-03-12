@@ -20,7 +20,7 @@ void p_s(va_list str)
  */
 void p_c(va_list str)
 {
-	printf("%c", va_arg(str, int));
+	printf("%c", (char) va_arg(str, int));
 }
 /**
  *p_f - Ptrints int
@@ -28,7 +28,7 @@ void p_c(va_list str)
  */
 void p_f(va_list str)
 {
-	printf("%f", va_arg(str, double));
+	printf("%f", (float) va_arg(str, double));
 }
 /**
  *p_i - Ptrints float
