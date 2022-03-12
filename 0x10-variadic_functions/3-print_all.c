@@ -5,12 +5,13 @@
 */
 void p_s(va_list str)
 {
-	if (str == NULL)
+	char *aux = va_arg(str, char*);
+	if (*aux == '\0')
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", va_arg(str, char *));
+	printf("%s", aux);
 }
 /**
  *p_c - Ptrints char *
