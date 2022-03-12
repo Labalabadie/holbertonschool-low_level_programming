@@ -6,7 +6,10 @@
 void p_s(va_list str)
 {
 	if (str == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
 	printf("%s", va_arg(str, char *));
 }
 /**
