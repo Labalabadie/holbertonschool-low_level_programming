@@ -62,13 +62,13 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (pr[j].x != NULL)
 		{
-			if (pr[j].x[i] == format[i])
-		{
+			if (pr[j].x[0] == format[i])
+			{
 			printf("%s", b);
 			pr[j].f(str);
 			b = a;
-		}
-		j++;
+			}
+			j++;
 		}
 		i++;
 	}
