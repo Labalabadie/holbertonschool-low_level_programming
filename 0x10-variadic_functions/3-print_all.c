@@ -5,6 +5,8 @@
 */
 void p_s(va_list str)
 {
+	if (str == NULL)
+		printf("(nil)");
 	printf("%s", va_arg(str, char *));
 }
 /**
@@ -57,8 +59,6 @@ void print_all(const char * const format, ...)
 		{
 			if (pr[j].x == format[i])
 		{
-			if (str == NULL)
-				printf("(nil)");
 			printf("%s", b);
 			pr[j].f(str);
 			break;
