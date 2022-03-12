@@ -36,9 +36,9 @@ void p_f(va_list f)
  *p_i - Ptrints float
  *@i: given argument
  */
-void p_i(va_list f)
+void p_i(va_list i)
 {
-	printf("%d", va_arg(f, int));
+	printf("%d", va_arg(i, int));
 }
 /**
  *print_all - Prints any kind of argument given through a va_list
