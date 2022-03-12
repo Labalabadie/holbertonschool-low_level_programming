@@ -5,9 +5,9 @@
 *p_s - Ptrints char *
 *@str: given argument
 */
-void p_s(va_list str)
+void p_s(va_list s)
 {
-	char *aux = va_arg(str, char*);
+	char *aux = va_arg(s, char*);
 
 	if (aux == NULL)
 	{
@@ -20,25 +20,25 @@ void p_s(va_list str)
  *p_c - Ptrints char *
  *@str: given argument
  */
-void p_c(va_list str)
+void p_c(va_list c)
 {
-	printf("%c", (char) va_arg(str, int));
+	printf("%c", (char) va_arg(c, int));
 }
 /**
  *p_f - Ptrints int
  *@str: given argument
  */
-void p_f(va_list str)
+void p_f(va_list f)
 {
-	printf("%f", (float) va_arg(str, double));
+	printf("%f", (float) va_arg(f, double));
 }
 /**
  *p_i - Ptrints float
  *@str: given argument
  */
-void p_i(va_list str)
+void p_i(va_list f)
 {
-	printf("%d", va_arg(str, int));
+	printf("%d", va_arg(f, int));
 }
 /**
  *print_all - Prints any kind of argument given through a va_list
