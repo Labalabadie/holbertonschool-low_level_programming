@@ -3,7 +3,7 @@
 #include <stddef.h>
 /**
 *p_s - Ptrints char *
-*@str: given argument
+*@s: given argument
 */
 void p_s(va_list s)
 {
@@ -18,7 +18,7 @@ void p_s(va_list s)
 }
 /**
  *p_c - Ptrints char *
- *@str: given argument
+ *@c: given argument
  */
 void p_c(va_list c)
 {
@@ -26,7 +26,7 @@ void p_c(va_list c)
 }
 /**
  *p_f - Ptrints int
- *@str: given argument
+ *@f: given argument
  */
 void p_f(va_list f)
 {
@@ -34,7 +34,7 @@ void p_f(va_list f)
 }
 /**
  *p_i - Ptrints float
- *@str: given argument
+ *@i: given argument
  */
 void p_i(va_list f)
 {
