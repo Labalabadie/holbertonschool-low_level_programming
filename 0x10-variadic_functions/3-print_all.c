@@ -48,7 +48,7 @@ void print_all(const char * const format, ...)
 {
 	va_list str;
 	chfun pr[] = {
-		{'s', p_s}, {'c', p_c}, {'i', p_i}, {'f', p_f}, {'\0', NULL}
+		{"s", p_s}, {"c", p_c}, {"i", p_i}, {"f", p_f}, {NULL, NULL}
 	};
 	int i;
 	int j;
@@ -60,9 +60,9 @@ void print_all(const char * const format, ...)
 	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while (pr[j].x != '\0')
+		while (*pr[j].x != '\0')
 		{
-			if (pr[j].x == format[i])
+			if (*pr[j].x == format[i])
 		{
 			printf("%s", b);
 			pr[j].f(str);
