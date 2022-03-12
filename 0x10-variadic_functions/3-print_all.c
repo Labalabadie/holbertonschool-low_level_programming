@@ -1,14 +1,11 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stddef.h>
 #include <string.h>
+#include <stddef.h>
 /**
- * print_string - print string
- * @s: parameter
- * Return: void
- */
-void print_string(va_list s)
+*p_s - Ptrints char *
+*@s: given argument
+*/
+void p_s(va_list s)
 {
 	char *aux = va_arg(s, char*);
 
@@ -20,70 +17,63 @@ void print_string(va_list s)
 	printf("%s", aux);
 }
 /**
- * print_integer - print integer
- * @i: parameter
- * Return: void
+ *p_c - Ptrints char *
+ *@c: given argument
  */
-void print_integer(va_list i)
-{
-	printf("%d", va_arg(i, int));
-}
-/**
- * print_char - print char
- * @c: parameter
- * Return: void
- */
-void print_char(va_list c)
+void p_c(va_list c)
 {
 	printf("%c", (char) va_arg(c, int));
 }
 /**
- * print_float - print float
- * @f: parameter
- * Return: void
+ *p_f - Ptrints int
+ *@f: given argument
  */
-void print_float(va_list f)
+void p_f(va_list f)
 {
 	printf("%f", (float) va_arg(f, double));
 }
-
 /**
- * print_all - print all
- * @format: va_list
- * Return: void
+ *p_i - Ptrints float
+ *@i: given argument
+ */
+void p_i(va_list i)
+{
+	printf("%d", va_arg(i, int));
+}
+/**
+ *print_all - Prints any kind of argument given through a va_list
+ *i:counter
+ *j:counter for struct array
+ *@format: const pointer to constanr array of char
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	int j = 0;
-	char *empty = "", *comma = ", ";
-	va_list p;
-
-	opp selector[] = {
-		{"c", print_char},
-		{"i", print_integer},
-		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
+	va_list str;
+	chfun pr[] = {
+		{"c", p_c}, {"i", p_i}, {"f", p_f}, {"s", p_s}, {NULL, NULL}
 	};
+	int i;
+	int j;
+	char *a = ", ";
+	char *b = "";
 
-	va_start(p, format);
-
-	while (format != NULL && format[i] != '\0')
+	va_start(str, format);
+	i = 0;
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while (selector[j].c != NULL)
+		while (pr[j].x != NULL)
 		{
-			if (selector[j].c[0] == format[i])
+			if (pr[j].x[0] == format[i])
 			{
-				printf("%s", empty);
-				selector[j].f(p);
-				empty = comma;
+			printf("%s", b);
+			pr[j].f(str);
+			b = a;
 			}
 			j++;
 		}
 		i++;
 	}
 	printf("\n");
-	va_end(p);
+	va_end(str);
 }
