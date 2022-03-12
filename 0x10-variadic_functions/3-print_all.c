@@ -1,4 +1,5 @@
 #include "variadic_functions.h"
+#include <string.h>
 /**
 *p_s - Ptrints char *
 *@str: given argument
