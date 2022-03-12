@@ -60,9 +60,9 @@ void print_all(const char * const format, ...)
 	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while (*pr[j].x != '\0')
+		while (pr[j].x != NULL)
 		{
-			if (*pr[j].x == format[i])
+			if (pr[j].x[i] == format[i])
 		{
 			printf("%s", b);
 			pr[j].f(str);
