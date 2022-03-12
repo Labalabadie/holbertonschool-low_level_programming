@@ -1,33 +1,47 @@
 #include "variadic_functions.h"
-
-typedef struct chfon
-{
-	char x;
-	void (*f)(va_list);
-} chfun;
-
+/**
+*p_s - Ptrints char *
+*@str: given argument
+*/
 void p_s(va_list str)
 {
-	printf("%s",va_arg(str, char *));
+	printf("%s", va_arg(str, char *));
 }
+/**
+ *p_c - Ptrints char *
+ *@str: given argument
+ */
 void p_c(va_list str)
 {
 	printf("%c", va_arg(str, int));
 }
+/**
+ *p_f - Ptrints int
+ *@str: given argument
+ */
 void p_f(va_list str)
 {
 	printf("%f", va_arg(str, double));
 }
+/**
+ *p_i - Ptrints float
+ *@str: given argument
+ */
 void p_i(va_list str)
 {
 	printf("%d", va_arg(str, int));
 }
-
+/**
+ *print_all - Prints any kind of argument given through a va_list
+ *i:counter
+ *j:counter for struct array
+ *@format: const pointer to constanr array of char
+ */
 void print_all(const char * const format, ...)
 {
 	va_list str;
 	chfun pr[] = {
-		{'s', p_s}, {'c',p_c}, {'i',p_i}, {'f',p_f}, {'\0', NULL}
+		{'s', p_s}, {'c', p_c}, {'i', p_i}, {'f', p_f}, {'\0', NULL}
 	};
 	unsigned int i;
 	unsigned int j;
@@ -41,7 +55,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (pr[j].x != '\0')
 		{
-	       if (pr[j].x == format[i])
+			if (pr[j].x == format[i])
 		{
 			if (str == NULL)
 				printf("(nil)");
