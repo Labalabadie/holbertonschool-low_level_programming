@@ -48,7 +48,7 @@ void print_all(const char * const format, ...)
 {
 	va_list str;
 	chfun pr[] = {
-		{"s", p_s}, {"c", p_c}, {"i", p_i}, {"f", p_f}, {NULL, NULL}
+		{"c", p_c}, {"i", p_i}, {"f", p_f}, {"s", p_s}, {NULL, NULL}
 	};
 	int i;
 	int j;
