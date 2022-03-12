@@ -50,8 +50,8 @@ void print_all(const char * const format, ...)
 	chfun pr[] = {
 		{'s', p_s}, {'c', p_c}, {'i', p_i}, {'f', p_f}, {'\0', NULL}
 	};
-	unsigned int i;
-	unsigned int j;
+	int i;
+	int j;
 	const char *a = ", ";
 	const char *b = "";
 
@@ -72,6 +72,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	putchar('\n');
+	printf("\n");
 	va_end(str);
 }
