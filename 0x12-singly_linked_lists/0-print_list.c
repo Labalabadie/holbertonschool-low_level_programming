@@ -4,7 +4,7 @@
  *@h: Name of the list.
  *Return: amount of nodes in linked list.
  */
-size_t print_list(cons list_t *h)
+size_t print_list(const list_t *h)
 {
 	int a = 0;
 
