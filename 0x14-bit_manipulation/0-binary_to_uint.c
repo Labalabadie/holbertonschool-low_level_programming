@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- *  *_pow - Does exponential arithmetic.
- *   *@a: Base number.
- *    *@b: exponential number.
- *     *Return: Result.
- *      */
+ *_pow - Does exponential arithmetic.
+ *@a: Base number.
+ *@b: exponential number.
+ *Return: Result.
+ */
 int _pow(int a, int b)
 {
 	int result = 1;
@@ -19,9 +19,9 @@ int _pow(int a, int b)
 	return (result);
 }
 /**
- *
- *
- *
+ * binary_to_uint - converts binary in to uns int.
+ *@b: Given string.
+ *Return: number in decimal, or 0 if unvalid string.
  */
 unsigned int binary_to_uint(const char *b)
 {
@@ -29,6 +29,8 @@ unsigned int binary_to_uint(const char *b)
 	int j = 0;
 	unsigned int i = 0;
 
+	if (!b)
+		return (0);
 	for (a = 0; b[a] != '\0'; a++)
 	{
 		if (b[a] != '0' && b[a] != '1')
