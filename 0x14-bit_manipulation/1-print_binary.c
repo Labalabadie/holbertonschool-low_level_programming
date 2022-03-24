@@ -8,6 +8,8 @@ void print_binary(unsigned long int n)
 	int a = (4 * (sizeof(n)));
 	int b = 0;
 
+	if (!n)
+		return;
 	if (n == 0)
 	{
 		_putchar('0');
