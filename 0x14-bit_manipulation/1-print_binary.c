@@ -9,7 +9,10 @@ void print_binary(unsigned long int n)
 	int b = 0;
 
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 	a--;
 	for (; a >= 0; a--)
 	{
