@@ -3,7 +3,7 @@
  *read_textfile - A func that reads a txt file and prints it to POSIX stdout.
  *@filename: Name of the file in argv.
  *@letters: Number of char to be printed.
- *return: 0 if requirement not encountered, else nro of char printed.
+ *Return: 0 if requirement not encountered, else nro of char printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -21,6 +21,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	close(fd);
 	free(buf);
 	if (ab < 0)
-		return(0);
-	return(cd);
+		return (0);
+	return (cd);
 }
