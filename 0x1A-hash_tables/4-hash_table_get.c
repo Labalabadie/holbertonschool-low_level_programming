@@ -8,15 +8,21 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned int key_value = 0;
-	hash_node_t *tmp;
+	hash_node_t *tmp, **head;
 
 	if (!ht || !key || *key == '\0')
 		return (NULL);
 
 	key_value = key_index((const unsigned char *)key, ht->size);
-	tmp = ht->array[key_value];
-	while (tmp && tmp->key != key)
+
+	head = &ht->array[key_value];
+	tmp = *head;
+
+	while (tmp && tmp->next && tmp->key != key)
+	{
 		tmp = tmp->next;
+	}
+
 	if (strcmp(tmp->key, key) == 0)
 		return (tmp->value);
 	return (NULL);
