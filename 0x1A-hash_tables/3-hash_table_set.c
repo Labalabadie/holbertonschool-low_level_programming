@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- *hash_tables_set - Adds an element to the hash table
+ *hash_table_set - Adds an element to the hash table.
  *@ht: pointer to hash_table_t.
  *@key: key
  *@value: value asociated to key.
@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	key_value = key_index((unsigned const char *)key, ht->size);
-	
+
 	if (!ht->array[key_value])
 	{
 		tmp = malloc(sizeof(hash_node_t *));
